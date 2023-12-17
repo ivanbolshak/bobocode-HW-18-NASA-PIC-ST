@@ -1,0 +1,23 @@
+
+spring:
+  datasource:
+    url: "jdbc:postgresql://127.0.0.1:5432/nasa"
+    username: "techuser"
+#    platform: "postgresql"
+    hikari:
+      minimumIdle: 2
+      maximumPoolSize: 5
+      minimum-idle: 2
+      maximum-pool-size: 5
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate.ddl-auto: validate
+    show-sql: true
+    open-in-view: false
+  flyway:
+    enabled: true
+    connect-retries: 3
+    schemas: nasa
+    table: money_transfer_flyway_update_history
+    baseline-on-migrate: true
+    validateOnMigrate: false
